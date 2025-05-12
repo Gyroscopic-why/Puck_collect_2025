@@ -24,21 +24,23 @@
 
 #define BNO055_REQUEST_CHIP_ID 0x00
 #define BNO055_CHIP_ID 0xA0
- 
-float chopDegrees(float val){
-    float chopedVal = val;
 
-    while (abs(chopedVal) > 180.0f)
-        chopedVal -= 360.0f * sgn(chopedVal);
+template <typename T>
+T chopDegrees(T val){
+    T chopedVal = val;
+
+    while (abs(chopedVal) > 180)
+        chopedVal -= 360 * sgn(chopedVal);
         
     return chopedVal;
 }
 
-float chopRadians(float val){
-    float chopedVal = val;
+template <typename T>
+T chopRadians(T val){
+    T chopedVal = val;
 
     while (abs(chopedVal) > PI)
-        chopedVal -= 2.0f * PI * sgn(chopedVal);
+        chopedVal -= 2 * PI * sgn(chopedVal);
         
     return chopedVal;
 }

@@ -7,7 +7,7 @@
 #include "utils/ElapsedTime.h"
 #include "utils/Sgn.h"
 
-PDRegulator _separatorRegulator(SEPARATOR_P, SEPARATOR_D);
+PDRegulator<int32_t> _separatorRegulator(SEPARATOR_P, SEPARATOR_D);
 int32_t _targetSeparatorPos = 0;
 
 enum ColorType

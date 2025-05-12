@@ -5,6 +5,7 @@
 class ElapseTime{
 private:
     uint64_t _resetMicros = 0;
+    
 public:
     ElapseTime(){
         _resetMicros = micros();

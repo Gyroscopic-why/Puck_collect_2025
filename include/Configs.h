@@ -1,20 +1,24 @@
 #pragma once
+
 #include <Arduino.h>
+
+#define UPDATE_TIME_MICROS 15000
 
 //DriveTrain
 #define IS_GYRO false
 #define IS_DISTANCE_SENSOR true
+#define WHEEL_DISTANCE 268
 
 #define ROBOT_SPEED 0.3f
 #define ETALON_DISTANCE 20.0f
 
 #define ANGLE_ERROR 2.5f
 #define SINGLE_ENCODER_STEP (20 * 24)
-#define SINGLE_WHEEL_STEP_BY_ENCODER_TIC (PI * 100) / SINGLE_ENCODER_STEP
-
-#define TURN_45_DEGREE_DISTANCE ((2 * sqrt(288) * PI) / 360) * 45
 
 #define BASE_STEP_COUNT 8
+
+#define EXECUTION_LIMIT 40.0
+#define TIME_ERROR 1.0
 
 //Intake
 #define CLAMP_SERVO_CALMP_POS 0
@@ -37,3 +41,6 @@
 #define BRUSH_MOTOR_POWER 0.5f
 
 #define BRUSH_DEFEND_TIMER 1.0f
+
+//median filter
+#define DEFAULT_MEDIAN_BUFFER_LENGHT 11
